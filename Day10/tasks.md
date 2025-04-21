@@ -50,21 +50,21 @@ function outer(){
 
 ## 4. Use a loop inside a function and declare a variable inside the loop. Can you access it outside?
 
-```jsx
-// It's really just repeating the examples from the video...
-// let prevents variable from being spilled outside of the code block - learnt!
-// A loop is not a function, so var spills variable outside of the block of a loop.
+```
+It's really just repeating the examples from the video...
+let prevents variable from being spilled outside of the code block - learnt!
+A loop is not a function, so var spills variable outside of the block of a loop.
 ```
 
 ## 5. Write a function that tries to access a variable declared inside another function.
 
-```jsx
-// In this case nothing would allow it, nor let neither var. Both specifiers respect function (which is indeed also a block) scope.
+```
+In this case nothing would allow it, nor let neither var. Both specifiers respect function (which is indeed also a block) scope.
 ```
 
 ## 6. What will be the output and why?
 
-```
+```jsx
 console.log(a);
 let a = 10;
 // Error of accesing an uninitialized variable.
@@ -73,7 +73,7 @@ let a = 10;
 
 ## 7. Where is the `age` variable accessible?
 
-```
+```jsx
 function showAge() {
     let age = 25;
     console.log(age);
@@ -92,7 +92,7 @@ Options:
 
 ## 8. What will be the output and explain the output?
 
-```
+```jsx
 let message = "Hello";
 
 function outer() {
@@ -111,7 +111,7 @@ outer();
 
 ## 9. What will be the output and why?
 
-```
+```jsx
 let x = "Global";
 
 function outer() {
@@ -131,7 +131,7 @@ outer();
 ```
 
 ## 10. What will be the output and why?
-```
+```jsx
 function counter() {
     let count = 0;
     return function () {
