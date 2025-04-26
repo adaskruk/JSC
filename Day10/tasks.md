@@ -2,7 +2,7 @@
 
 ## 1. What will be the output of the following code and why?
 
-```
+```js
 let user = "Alice";
 
 function outer() {
@@ -21,7 +21,7 @@ outer();
 
 ## 2. What is the mistake in the code below?
 
-```
+```js
 let total = 0; // Global, bad practice
 
 function add(num) {
@@ -53,7 +53,8 @@ function outer(){
 ```
 It's really just repeating the examples from the video...
 let prevents variable from being spilled outside of the code block - learnt!
-A loop is not a function, so var spills variable outside of the block of a loop.
+A loop is not a function, so var spills variable outside of the block of a loop,
+but stays contained inside a function.
 ```
 
 ## 5. Write a function that tries to access a variable declared inside another function.
@@ -86,8 +87,8 @@ console.log(age);
 Options:
 
 - A: In Global
-- B: Only inside showAge
-- C: It will cause an error
+- **B: Only inside showAge**
+- **C: It will cause an error**
 - D: None of the above
 
 ## 8. What will be the output and explain the output?
