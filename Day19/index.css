@@ -1,0 +1,19 @@
+.tab {
+  margin: 3px;
+  padding: 0.2em 0.4em;
+  border-radius: 20px;
+}
+
+.tab.active {
+  border: 2px solid red;
+}
+
+.content {
+  margin: 5px;
+  background-color: cornsilk;
+  display: none;
+}
+
+.content.active {
+  display: block;
+}
