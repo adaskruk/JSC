@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recipe Finder</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito&display=swap"
+      rel="stylesheet"
+    />
+    <script defer src="./recipeFinder.js"></script>
+  </head>
+  <body>
+    <main>
+      <section id="filter">
+        <label for="search">Search</label>
+        <input
+          type="text"
+          name="search"
+          id="search"
+          placeholder="Enter recipe"
+        />
+        <button type="button" id="reset-btn">Clear</button>
+      </section>
+      <section id="list">
+        <template id="template">
+          <div class="recipe">
+            <h4 class="title">Spaghetti</h4>
+            <div class="content">
+              <div>
+                <h5>Ingredients:</h5>
+                <ul id="ingredients"></ul>
+                <h5>Instructions:</h5>
+                <p id="instructions"></p>
+              </div>
+            </div>
+          </div>
+        </template>
+      </section>
+    </main>
+  </body>
+</html>

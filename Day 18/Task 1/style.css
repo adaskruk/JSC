@@ -1,0 +1,12 @@
+form {
+  border: 1px, gray solid;
+  margin: 1em;
+  padding: 1em;
+}
+
+input {
+  margin: 5px;
+}
+button {
+  margin: 5px;
+}

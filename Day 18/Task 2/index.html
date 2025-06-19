@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My code</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script defer src="./script.js"></script>
+  </head>
+  <body>
+    <h2>User Table Task</h2>
+    <div>
+      <input type="text" id="name" placeholder="Enter Name" />
+      <input type="number" id="age" placeholder="Enter Age" />
+      <input type="text" id="role" placeholder="Enter Role" />
+      <input type="button" value="Add User" onclick="insertRow()" />
+    </div>
+    <div>
+      <br /><input
+        type="text"
+        id="searchInput"
+        placeholder="Filter by name"
+        onkeyup="filterTable()"
+      />
+    </div>
+    <table id="usersTb">
+      <caption>
+        USERS
+      </caption>
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Role</th>
+      </tr>
+    </table>
+  </body>
+</html>

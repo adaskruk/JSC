@@ -1,0 +1,137 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Nunito";
+  font-style: normal;
+  color: #0f172a;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  margin: 2rem;
+  background-color: #d9d9d9;
+  border-radius: 12px;
+  box-shadow: 5px 5px 5px #888;
+  overflow: auto;
+}
+
+#filter {
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 1rem;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+#list {
+  min-height: 50vh;
+  min-width: 90%;
+  display: flex;
+  flex-direction: column;
+}
+#not-found {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 6px;
+  margin: 8px;
+  padding: 0px 5px;
+}
+.hidden {
+  display: none;
+}
+.recipe {
+  border-radius: 6px;
+  margin: 8px;
+  padding: 0px 5px;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.recipe.hidden {
+  display: none;
+}
+
+.content {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease;
+  overflow: hidden;
+}
+.content > div {
+  min-height: 0;
+  overflow: hidden;
+}
+.content.show {
+  grid-template-rows: 1fr;
+}
+
+.title {
+  cursor: pointer;
+  margin: 3px;
+}
+
+h5 {
+  margin: 5px 0px 0px;
+}
+
+ul {
+  list-style: none outside;
+  padding-left: 0;
+}
+li {
+  font-size: small;
+  position: relative;
+  padding-left: 0.2em;
+}
+
+p {
+  padding-left: 0.2em;
+  font-size: small;
+}
+
+input {
+  flex: 1;
+  padding: 8px 12px;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+}
+input::placeholder {
+  color: #d9d9d9;
+  font-weight: 300;
+}
+
+p {
+  color: #0f172a;
+  font-weight: 400;
+}
+
+button {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 8px 16px;
+  gap: 10px;
+
+  height: 2rem;
+  color: white;
+  background: #0f172a;
+  border-radius: 6px;
+}
+
+label {
+  font-weight: 400;
+  align-items: center;
+  color: #64748b;
+}
