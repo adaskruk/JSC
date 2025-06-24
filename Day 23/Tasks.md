@@ -10,7 +10,7 @@ let promise = new Promise((resolve) => {
   setTimeout(() => resolve("Hello, Promises!"), 1000);
 });
 
-promise.then((result) => console.log(result));
+promise.then(console.log);
 ```
 
 ## 2. Reject a Promise
@@ -21,7 +21,7 @@ promise.then((result) => console.log(result));
 ```jsx
 new Promise((resolve, reject) => {
   reject("Something went wrong!");
-}).catch((error) => console.error(error));
+}).catch(console.error);
 ```
 
 ## 3. Simulate Coin Toss
@@ -32,7 +32,7 @@ Return a Promise that randomly resolves to "Heads" or "Tails" after 1 second.
 new Promise((resolve, reject) => {
   let result = Math.random() < 0.5 ? "Heads" : "Tails";
   setTimeout(() => resolve(result), 1000);
-}).then((result) => console.log(result));
+}).then(console.log);
 ```
 
 ## 4. Promise with Condition
@@ -48,24 +48,35 @@ function checkAge(age) {
   });
 }
 
-checkAge(18).then((r) => console.log(r));
-checkAge(17).catch((r) => console.error(r));
+checkAge(18).then(console.log);
+checkAge(17).catch(console.error);
 ```
 
 ## 5. Chain Promises Sequentially
 
 - Create three Promises that log:
-    - "Step 1 done"
-    - "Step 2 done"
-    - "Step 3 done"
+  - "Step 1 done"
+  - "Step 2 done"
+  - "Step 3 done"
 - Chain them using .then().
 
 ```jsx
 new Promise((resolve, reject) => {
-  resolve(console.log("Step 1 done"));
+  console.log("Step 1 done");
+  resolve();
 })
-  .then(console.log("Step 2 done"))
-  .then(console.log("Step 3 done"));
+  .then(() => {
+    return new Promise((resolve, reject) => {
+      console.log("Step 2 done");
+      resolve();
+    });
+  })
+  .then(() => {
+    return new Promise((resolve, reject) => {
+      console.log("Step 3 done");
+      resolve();
+    });
+  });
 ```
 
 ## 6. Value Transformation in Chain
@@ -144,9 +155,9 @@ promise
 ## 9. Return New Promises in .then()
 
 - Chain multiple .then() where each returns a new Promise with a delay and logs a step like:
-    - “First”
-    - “Second”
-    - “Third”
+  - “First”
+  - “Second”
+  - “Third”
 
 ```jsx
 let promise = new Promise((resolve, reject) => {
@@ -189,32 +200,38 @@ function createDBQuery() {
   let promiseBank = [
     () => {
       return new Promise((resolve) => {
-        let data = {
-          user: "Bob",
-          age: 21,
-          admin: false,
-        };
-        setTimeout(() => resolve(data), randomDelay());
+        setTimeout(() => {
+          let data = {
+            user: "Bob",
+            age: 21,
+            admin: false,
+          };
+          resolve(data);
+        }, randomDelay());
       });
     },
     () => {
       return new Promise((resolve) => {
-        let data = {
-          user: "Peter",
-          age: 35,
-          admin: true,
-        };
-        setTimeout(() => resolve(data), randomDelay());
+        setTimeout(() => {
+          let data = {
+            user: "Peter",
+            age: 35,
+            admin: true,
+          };
+          resolve(data);
+        }, randomDelay());
       });
     },
     () => {
       return new Promise((resolve) => {
-        let data = {
-          user: "Mike",
-          age: 16,
-          admin: false,
-        };
-        setTimeout(() => resolve(data), randomDelay());
+        setTimeout(() => {
+          let data = {
+            user: "Mike",
+            age: 16,
+            admin: false,
+          };
+          resolve(data);
+        }, randomDelay());
       });
     },
   ];
@@ -251,5 +268,4 @@ fakeDBQuery()
     return fakeDBQuery();
   })
   .catch(console.error);
-
 ```
