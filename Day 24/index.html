@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Explorer</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="./script.js"></script>
+  </head>
+  <body>
+    <h1>Movie Explorer</h1>
+    <div id="search-panel">
+      <label for="search">Search for a title:</label>
+      <input type="text" placeholder="Enter title" id="search" />
+      <button type="button" id="clear">Clear</button>
+    </div>
+
+    <div id="card-container">
+      <div id="start">
+        <p>Here you can look up some Movie Infos.</p>
+      </div>
+      <div id="error" class="hidden">
+        <p id="error-message"></p>
+      </div>
+      <template id="source">
+        <div class="card">
+          <h3 class="title">Titanic</h3>
+          <h5 class="year">1997</h5>
+          <img
+            class="image"
+            src="https://m.media-amazon.com/images/M/MV5BYzYyN2FiZmUtYWYzMy00MzViLWJkZTMtOGY1ZjgzNWMwN2YxXkEyXkFqcGc@._V1_SX300.jpg"
+            alt=" movie poster"
+          />
+        </div>
+      </template>
+    </div>
+
+    <div id="overlay" class="hidden"></div>
+    <div id="details" class="hidden">
+      <button type="button" id="close-details-btn">✕</button>
+      <h3>Director</h3>
+      <p id="director"></p>
+      <br />
+      <h3>Writer</h3>
+      <p id="writer"></p>
+      <br />
+      <h3>Actors</h3>
+      <p id="actors"></p>
+      <br />
+      <h3>Year</h3>
+      <p id="year"></p>
+      <br />
+      <h3>Genre</h3>
+      <p id="genre"></p>
+      <br />
+      <h3>Language</h3>
+      <p id="language"></p>
+      <br />
+      <h3>Country</h3>
+      <p id="country"></p>
+      <br />
+      <h3>Awards</h3>
+      <p id="awards"></p>
+      <br />
+      <h3>Box Office</h3>
+      <p id="boxoffice"></p>
+      <br />
+      <h3>IMDb Rating</h3>
+      <p id="imdbRating"></p>
+    </div>
+  </body>
+</html>
